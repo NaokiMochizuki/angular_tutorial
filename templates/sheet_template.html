@@ -1,0 +1,33 @@
+<div ng-show='sctr.sheet.id'>
+<h1>帳票詳細 #<span ng-bind='sctr.sheet.id'></span></h1>
+    <p>作成日時: <span ng-bind='sctr.sheet.createdAt'></span></p>
+    <table class="table">
+      <colgroup span="4" class="col-md"></colgroup>
+      <thead>
+        <tr>
+          <th>商品名</th>
+          <th>単価</th>
+          <th>個数</th>
+          <th>小計</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat='orderLine in sctr.sheet.lines'>
+          <td ng-bind='orderLine.productName'></td>
+          <td ng-bind='orderLine.unitPrice | number'></td>
+          <td ng-bind='orderLine.count | number'></td>
+          <td ng-bind='sctr.getSubtotal(orderLine)'></td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="3">合計:</td>
+          <td ng-bind='sctr.getTotalAmount(sctr.sheet.lines) | number'></td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+  <div ng-hide='sctr.sheet.id'>
+    存在しない帳票を参照しています。 <a href="#/new">新しい帳票を作る</a>
+  </div>
+

@@ -1,0 +1,12 @@
+  <h1>帳票一覧</h1>
+  <ul ng-show='slctr.list'>
+    <li ng-repeat='sheet in slctr.list'>
+      #<span ng-bind='sheet.id'></span
+      <span ng-bind="sheet.createdAt | date: 'yyyy/MM/dd HH:mm'"></span>
+      <a ng-href='#/sheet/{{ sheet.id }}'>詳細を確認する</a>
+    </li>
+  </ul>
+  <div class='alert alert-info' ng-hide='slctr.list'>
+    帳票が存在しません。<a href='#/new'>新しい帳票を作る</a>
+  </div>
+
