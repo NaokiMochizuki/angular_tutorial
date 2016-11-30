@@ -1,6 +1,4 @@
-var myApp = angular.module('myApp');
-
-myApp.config(['$routeProvider', function ($routeProvider) {
+module.exports = function ($routeProvider) {
   $routeProvider
     .when('/', {
       templateUrl: 'templates/index_template.html',
@@ -20,5 +18,5 @@ myApp.config(['$routeProvider', function ($routeProvider) {
     .otherwise({
       redirectTo: '/'
     });
-}]);
+};
 

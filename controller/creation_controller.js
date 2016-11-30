@@ -1,6 +1,4 @@
-var myApp = angular.module('myApp');
-
-myApp.controller('CreationController', ['$location', 'sheets', function($location, sheets){
+module.exports = ['$location', 'sheets', function($location, sheets){
   var cctr = this;
 
   //初期化
@@ -63,5 +61,5 @@ myApp.controller('CreationController', ['$location', 'sheets', function($locatio
       count: 0
     };
   }
-}]);
+}];
 

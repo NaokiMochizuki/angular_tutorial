@@ -1,6 +1,4 @@
-var myApp = angular.module('myApp');
-
-myApp.service('sheets', function(){
+module.exports = function(){
   this.list = [];
 
   //listに帳票レコードを追加する処理
@@ -25,5 +23,5 @@ myApp.service('sheets', function(){
     }
     return null;
   };
-});
+};
 
