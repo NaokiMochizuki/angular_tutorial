@@ -1,6 +1,4 @@
-var myApp = angular.module('myApp');
-
-myApp.controller('SheetController',['$routeParams', 'sheets', function($params, sheets){
+module.exports = ['$routeParams', 'sheets', function($params, sheets){
 
   //初期化
   var sctr = this;
@@ -25,5 +23,5 @@ myApp.controller('SheetController',['$routeParams', 'sheets', function($params, 
     });
     return total;
   }
-}]);
+}];
 
